@@ -1,0 +1,19 @@
+--- bad.py	2021-06-12 17:00:08.897698436 +0400
++++ good.py	2021-06-12 18:16:57.981943826 +0400
+@@ -1,12 +1,14 @@
+ #! /usr/bin/env python3
+ 
+ import psutil
++import socket
+ 
+ def check_cpu_usage(percent):
+-    usage = psutil.cpu_percent()
++    usage = psutil.cpu_percent(1)
++    print("DEBUG: Hostname: {} Usage: {}".format(socket.gethostname(),usage))
+     return usage < percent
+ 
+-if not check_cpu_usage(1):
++if not check_cpu_usage(50):
+     print("ERROR! CPU is overloaded")
+ else:
+     print("Everything is OK!")
