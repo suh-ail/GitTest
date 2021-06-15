@@ -5,3 +5,5 @@ echo "Just trying out Stuff"
 echo "Hello World"
 
 Keep on adding new stuff
+DEBUG: Hostname: centos-test Usage: 0.0
+Everything is OK!
